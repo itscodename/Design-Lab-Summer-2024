@@ -1,2 +1,2 @@
-# S24_robprog
-Creating a repository for IRP.
+# Design Lab Summer 2024
+Creating a repository for Design Lab internship.
