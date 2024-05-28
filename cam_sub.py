@@ -1,11 +1,11 @@
 #####
-import _______
+import rclpy
 #####
 
 from rclpy.node import Node
 
 #####
-from ______.msg import Image
+from sensor_msgs.msg import Image
 #####
 
 import cv2
@@ -48,7 +48,7 @@ class WebcamSub(Node):
 
         # define subscriber
         #####
-        self.img_subscription = self.___________(Image, 'image_raw', self.img_callback, 1)
+        self.img_subscription = self.create_subscription(Image, 'image_raw', self.img_callback, 1)
         #####
         
         self.img_subscription # prevent unused varaibale warning
@@ -74,7 +74,7 @@ def main(args=None):
     rclpy.init(args=args)
 
     #####
-    imgsub_obj = ________()
+    imgsub_obj = WebcamSub()
     #####
     
     rclpy.spin(imgsub_obj)

@@ -1,7 +1,7 @@
 import rclpy
 
 ######
-from rclpy._______ import Node
+from rclpy.node import Node
 ######
 
 from sensor_msgs.msg import Image
@@ -38,7 +38,7 @@ class Webcam_Impl(Node):
     def __init__(self):
     
         #####
-        ________().__init__('webcam')
+        super().__init__('webcam')
         #####
 
         # initialize a publisher
@@ -76,7 +76,7 @@ def main(args=None):
 
     # spin the node (otherwise it only execute once)
     #####
-    rclpy._____(webcam)
+    rclpy.spin(webcam)
     #####
 
     # Destroy the node explicitly
